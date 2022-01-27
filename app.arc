@@ -8,6 +8,10 @@ remix-architect-app
 
 @static
 
+@tables
+posts
+  postID *String
+
 # @aws
 # profile default
 # region us-west-1

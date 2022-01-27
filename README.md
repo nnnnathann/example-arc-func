@@ -1,58 +1,16 @@
-# Welcome to Remix!
+Example of errors when importing @architect/functions
 
-- [Remix Docs](https://remix.run/docs)
-
-## Architect Setup
-
-When deploying to AWS Lambda with Architect, you'll need:
-
-- Architect (`arc`) CLI
-- AWS SDK
-
-Architect recommends installing these globally:
-
-```sh
-$ npm i -g @architect/architect aws-sdk
 ```
-
-## Development
-
-You will be running two processes during development when using Architect as your server.
-
-- Your Architect server sandbox in one
-- The Remix development server in another
-
-```sh
-# in one tab
-$ arc sandbox
-
-# in another
-$ npm run dev
+Application Error
+TypeError: Cannot read properties of undefined (reading 'root')
+    at RemixRoute (http://localhost:3333/_static/build/_shared/chunk-5KGH6GI6.js:4705:19)
+    at renderWithHooks (http://localhost:3333/_static/build/entry.client-SIK4BBR4.js:11068:26)
+    at mountIndeterminateComponent (http://localhost:3333/_static/build/entry.client-SIK4BBR4.js:13188:21)
+    at beginWork (http://localhost:3333/_static/build/entry.client-SIK4BBR4.js:13975:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:3333/_static/build/entry.client-SIK4BBR4.js:3678:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:3333/_static/build/entry.client-SIK4BBR4.js:3703:24)
+    at invokeGuardedCallback (http://localhost:3333/_static/build/entry.client-SIK4BBR4.js:3737:39)
+    at beginWork$1 (http://localhost:3333/_static/build/entry.client-SIK4BBR4.js:17084:15)
+    at performUnitOfWork (http://localhost:3333/_static/build/entry.client-SIK4BBR4.js:16312:20)
+    at workLoopSync (http://localhost:3333/_static/build/entry.client-SIK4BBR4.js:16266:13)
 ```
-
-Open up [http://localhost:3333](http://localhost:3333) and you should be ready to go!
-
-If you'd rather run everything in a single tab, you can look at [concurrently](https://npm.im/concurrently) or similar tools to run both processes in one tab.
-
-## Deploying
-
-Before you can deploy, you'll need to do some setup with AWS:
-
-- First [install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
-- Then [follow the Architect setup instructions](https://arc.codes/docs/en/guides/get-started/detailed-aws-setup).
-
-If you make it through all of that, you're ready to deploy!
-
-1. build the app for production:
-
-   ```sh
-   $ npm run build
-   ```
-
-2. Deploy with `arc`
-
-   ```sh
-   $ arc deploy production
-   ```
-
-You're in business!
